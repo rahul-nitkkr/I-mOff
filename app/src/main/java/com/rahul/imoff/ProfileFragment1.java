@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.parse.ParseUser;
 
 
 public class ProfileFragment1 extends Fragment {
@@ -20,8 +23,12 @@ public class ProfileFragment1 extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile1, container, false);
 
+        ParseUser parseuser = ParseUser.getCurrentUser();
+
+        TextView tv = (TextView) view.findViewById(R.id.tv);
         Button btn = (Button) view.findViewById(R.id.btn);
 
+        tv.setText("Hello " + parseuser.getUsername());
         btn.setOnClickListener(new OnClickListener() {
 
             @Override

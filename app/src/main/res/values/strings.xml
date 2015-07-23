@@ -34,7 +34,7 @@
         <string name="subtitle">Create.Send.Forget</string>
         <string name="APP_ID">1475898282702418</string>
     <string name="title_activity_mock_profile">MockProfileActivity</string>
-
+    <string name="manager_check">Are you a Manager?</string>
 
 
 </resources>

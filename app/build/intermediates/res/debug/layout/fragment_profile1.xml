@@ -9,7 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
-        android:text="@string/first_fragment" />
+        android:text="HELLO USER!"
+        android:textSize="48sp"
+        android:paddingTop="25dp"/>
     <Button
         android:id="@+id/btn"
         android:layout_height="wrap_content"
@@ -18,6 +20,51 @@
         android:text="@string/to_next_fragment"
         android:layout_marginBottom="36dp"
         android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignEnd="@+id/editText"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_marginTop="167dp"
+        android:text="@string/manager_check"
+        android:textSize="24sp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"/>
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Switch"
+        android:id="@+id/switch1"
+        android:layout_below="@+id/editText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        style="@style/Base.ThemeOverlay.AppCompat.Light"
+        android:background="#ff85caff"
+        android:textOff="NO"
+        android:textOn="YES"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
+        android:text="YES"
+        android:layout_alignBottom="@+id/switch1"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText"/>
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText3"
+        android:text="NO"
+        android:layout_alignBottom="@+id/switch1"
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignEnd="@+id/editText"/>
 
 </RelativeLayout><!-- From: file:/Users/Apple/Desktop/I'mOff/app/src/main/res/layout/fragment_profile1.xml -->
