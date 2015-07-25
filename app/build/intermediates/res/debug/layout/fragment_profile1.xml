@@ -10,12 +10,12 @@
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:text="HELLO USER!"
-        android:textSize="48sp"
+        android:textSize="40sp"
         android:paddingTop="25dp"/>
+
     <Button
         android:id="@+id/btn"
         android:layout_height="wrap_content"
-
         android:layout_width="wrap_content"
         android:text="@string/to_next_fragment"
         android:layout_marginBottom="36dp"
@@ -25,11 +25,11 @@
         android:layout_alignLeft="@+id/editText"
         android:layout_alignStart="@+id/editText"/>
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
-        android:layout_marginTop="167dp"
+        android:layout_marginTop="132dp"
         android:text="@string/manager_check"
         android:textSize="24sp"
         android:layout_alignParentTop="true"
@@ -38,33 +38,53 @@
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Switch"
         android:id="@+id/switch1"
-        android:layout_below="@+id/editText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="110dp"
-        style="@style/Base.ThemeOverlay.AppCompat.Light"
-        android:background="#ff85caff"
+        android:layout_marginTop="43dp"
+        android:background="#ffffad53"
         android:textOff="NO"
-        android:textOn="YES"/>
+        android:textOn="YES"
+        android:layout_below="@+id/editText"
+        android:layout_centerHorizontal="true"/>
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText2"
-        android:text="YES"
+        android:text="NO"
         android:layout_alignBottom="@+id/switch1"
         android:layout_alignLeft="@+id/editText"
         android:layout_alignStart="@+id/editText"/>
 
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText3"
-        android:text="NO"
+        android:text="YES"
         android:layout_alignBottom="@+id/switch1"
         android:layout_alignRight="@+id/editText"
         android:layout_alignEnd="@+id/editText"/>
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="25sp"-->
+        <!--android:text="Enter Team Name"-->
+        <!--android:id="@+id/textView"-->
+        <!--android:layout_above="@+id/teamName"-->
+        <!--android:layout_centerHorizontal="true"/>-->
+
+
+    <!--<EditText-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/teamName"-->
+        <!--android:layout_above="@+id/btn"-->
+        <!--android:background="@android:color/white"-->
+        <!--android:textSize="30sp"-->
+
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="99dp"/>-->
+
 
 </RelativeLayout><!-- From: file:/Users/Apple/Desktop/I'mOff/app/src/main/res/layout/fragment_profile1.xml -->
