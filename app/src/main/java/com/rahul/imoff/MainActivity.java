@@ -30,6 +30,9 @@ public class MainActivity extends ActionBarActivity {
     View.OnClickListener sendNotificationListener =  new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            ParseUser current  = ParseUser.getCurrentUser();
+            current.put(ParseConstants.KEY_OFFSTATUS,Boolean.TRUE);
+            current.saveInBackground();
             sendPushNotification();
         }
     };
