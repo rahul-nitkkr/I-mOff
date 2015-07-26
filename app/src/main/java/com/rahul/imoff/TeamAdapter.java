@@ -40,7 +40,7 @@ public class TeamAdapter extends ArrayAdapter<ParseUser> {
         if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.team_item, null);
             holder = new ViewHolder();
-            holder.profileImageView = (ImageView) convertView.findViewById(R.id.profilePic);
+//            holder.profileImageView = (ImageView) convertView.findViewById(R.id.profilePic);
             holder.nameLabel = (TextView) convertView.findViewById(R.id.nameLabel);
             holder.statusLabel = (ImageView) convertView.findViewById(R.id.statusLabel);
             convertView.setTag(holder);
@@ -108,10 +108,10 @@ public class TeamAdapter extends ArrayAdapter<ParseUser> {
         } else {
             holder.statusLabel.setImageResource(R.drawable.ic_person_black_36dp);
         }
-
-        ParseFile parseFile = member.getParseFile(ParseConstants.KEY_PROFILE_PHOTO);
-        Uri fileUri = Uri.parse(parseFile.getUrl());
-        Picasso.with(getContext()).load(fileUri.toString()).into(holder.profileImageView);
+//
+//        ParseFile parseFile = member.getParseFile(ParseConstants.KEY_PROFILE_PHOTO);
+//        Uri fileUri = Uri.parse(parseFile.getUrl());
+//        Picasso.with(getContext()).load(fileUri.toString()).into(holder.profileImageView);
 
 
 //        byte[] bytes = (byte[])(member.get(ParseConstants.KEY_PROFILE_PHOTO));
@@ -123,7 +123,7 @@ public class TeamAdapter extends ArrayAdapter<ParseUser> {
     }
 
     private static class ViewHolder {
-        ImageView profileImageView;
+        //ImageView profileImageView;
         TextView nameLabel;
         ImageView statusLabel;
     }
