@@ -62,7 +62,7 @@ public class ProfileFragment2 extends Fragment {
             public void onClick(View v) {
                 FragmentTransaction trans = getFragmentManager()
                         .beginTransaction();
-                //trans.replace(R.id.root_frame, new StaticFragment());
+                trans.replace(R.id.root_frame, new ProfileAddManagerFragment());
                 trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 trans.addToBackStack(null);
                 trans.commit();

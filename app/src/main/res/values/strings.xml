@@ -35,6 +35,8 @@
         <string name="APP_ID">1475898282702418</string>
     <string name="title_activity_mock_profile">MockProfileActivity</string>
     <string name="manager_check">Are you a Manager?</string>
+    <string name="title_activity_profile_photo">ProfilePhotoActivity</string>
+    <string name="error_external_storage">Externa Storage not available</string>
 
 
 </resources>

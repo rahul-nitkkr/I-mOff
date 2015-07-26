@@ -21,12 +21,16 @@ import android.widget.Toast;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
+import com.parse.ParseRelation;
+import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
@@ -42,6 +46,7 @@ public class ProfilePicture extends ActionBarActivity {
     private Button btnUploadImage;
     private File cameraImageFile;
     private TextView mTextView;
+    protected ParseRelation<ParseUser> mProfilePicture;
 
 
     @Override
@@ -62,15 +67,73 @@ public class ProfilePicture extends ActionBarActivity {
                 mCurrentPhotoPath = cursor.getString(columnIndex);
                 cursor.close();
 
+                File image = new File(mCurrentPhotoPath);
+                BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+
+
+                imgPhoto.setImageBitmap(getScaledBitmap(image.getAbsolutePath(), 800, 800));
+
+
             } else if (requestCode == RESULT_LOAD_CAMERA_IMAGE) {
-                mCurrentPhotoPath = cameraImageFile.getAbsolutePath();
+
+                Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
+                ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+                thumbnail.compress(Bitmap.CompressFormat.JPEG, 90, bytes);
+                File destination = new File(Environment.getExternalStorageDirectory(),
+                        System.currentTimeMillis() + ".jpg");
+                FileOutputStream fo;
+                try {
+                    destination.createNewFile();
+                    fo = new FileOutputStream(destination);
+                    fo.write(bytes.toByteArray());
+                    fo.close();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                imgPhoto.setImageBitmap(getScaledBitmap(destination.getAbsolutePath(),800,800));
+
             }
 
-            File image = new File(mCurrentPhotoPath);
-            BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-            Bitmap bitmap = BitmapFactory.decodeFile(image.getAbsolutePath(), bmOptions);
-            imgPhoto.setImageBitmap(bitmap);
+
         }
+    }
+
+    private Bitmap getScaledBitmap(String picturePath, int width, int height) {
+        BitmapFactory.Options sizeOptions = new BitmapFactory.Options();
+        sizeOptions.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(picturePath, sizeOptions);
+
+        int inSampleSize = calculateInSampleSize(sizeOptions, width, height);
+
+        sizeOptions.inJustDecodeBounds = false;
+        sizeOptions.inSampleSize = inSampleSize;
+
+        return BitmapFactory.decodeFile(picturePath, sizeOptions);
+    }
+
+    private int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
+        // Raw height and width of image
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        int inSampleSize = 1;
+
+        if (height > reqHeight || width > reqWidth) {
+
+            // Calculate ratios of height and width to requested height and
+            // width
+            final int heightRatio = Math.round((float) height / (float) reqHeight);
+            final int widthRatio = Math.round((float) width / (float) reqWidth);
+
+            // Choose the smallest ratio as inSampleSize value, this will
+            // guarantee
+            // a final image with both dimensions larger than or equal to the
+            // requested height and width.
+            inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
+        }
+
+        return inSampleSize;
     }
 
     private File createImageFile () throws IOException {
@@ -97,12 +160,14 @@ public class ProfilePicture extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_profilepicture);
 
         imgPhoto = (ImageView)findViewById(R.id.imgPhoto);
         imgPhoto.setOnClickListener(chooseImageListener);
         btnUploadImage = (Button)findViewById(R.id.btnUpload);
         btnUploadImage.setOnClickListener(uploadListener);
+
+        // getActionBar().hide();
 
     }
 
@@ -126,18 +191,17 @@ public class ProfilePicture extends ActionBarActivity {
                 e.printStackTrace();
             }
 
-            // Create the ParseFile
+            ParseUser currentUser = ParseUser.getCurrentUser();
+            mProfilePicture = currentUser.getRelation(ParseConstants.KEY_PROFILE_PHOTO);
+
             ParseFile file = new ParseFile("picturePath", image);
-            // Upload the image into Parse Cloud
+
             file.saveInBackground();
-            // Create a New Class called "ImageUpload" in Parse
-            ParseObject imgupload = new ParseObject("Image");
-            // Create a column named "ImageName" and set the string
-            imgupload.put("Image", "picturePath");
-            // Create a column named "ImageFile" and insert the image
-            imgupload.put("ImageFile", file);
-            // Create the class and the columns
-            imgupload.saveInBackground(new SaveCallback() {
+
+            currentUser.put(ParseConstants.KEY_PROFILE_PHOTO,file);
+
+
+            currentUser.saveInBackground(new SaveCallback() {
                 @Override
                 public void done(ParseException e) {
 
@@ -160,6 +224,7 @@ public class ProfilePicture extends ActionBarActivity {
                 if(items[which].equals("From Gallery")){
 
                     Intent galleryIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    galleryIntent.setType("image/*");
                     startActivityForResult(galleryIntent, RESULT_LOAD_GALLERY_IMAGE);
 
                 } else {

@@ -304,6 +304,7 @@
     <string name="empty_friends_label">Add friends to begin!</string>
     <string name="empty_inbox_label">No new messages!</string>
     <string name="empty_recipients_list">Please select some friends first!</string>
+    <string name="error_external_storage">Externa Storage not available</string>
     <string name="error_title">We\'re sorry!</string>
     <string name="first_fragment">first fragment</string>
     <string name="hello_world">Hello world!</string>
@@ -324,6 +325,7 @@
     <string name="title_activity_edit_friends">Edit Friends</string>
     <string name="title_activity_login">Login</string>
     <string name="title_activity_mock_profile">MockProfileActivity</string>
+    <string name="title_activity_profile_photo">ProfilePhotoActivity</string>
     <string name="title_activity_recepients">Recipients</string>
     <string name="title_activity_sign_up">Sign Up</string>
     <string name="title_activity_view_image">ViewImage</string>

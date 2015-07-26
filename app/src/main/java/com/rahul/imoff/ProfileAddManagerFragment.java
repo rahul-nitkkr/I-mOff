@@ -1,5 +1,6 @@
 package com.rahul.imoff;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -60,12 +61,18 @@ public class ProfileAddManagerFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                FragmentTransaction trans = getFragmentManager()
-                        .beginTransaction();
-                //trans.replace(R.id.root_frame, new StaticFragment());
-                trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                trans.addToBackStack(null);
-                trans.commit();
+//                FragmentTransaction trans = getFragmentManager()
+//                        .beginTransaction();
+//                //trans.replace(R.id.root_frame, new StaticFragment());
+//                trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+//                trans.addToBackStack(null);
+//                trans.commit();
+
+                Intent intent = new Intent(getActivity(),ProfilePicture.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+
             }
         });
 

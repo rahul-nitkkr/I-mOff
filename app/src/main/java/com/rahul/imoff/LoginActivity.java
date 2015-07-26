@@ -93,7 +93,7 @@ public class LoginActivity extends Activity {
                                 // Success!
 
                                 ImOffApplication.updateParseInstallation(user);
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, ProfilePicture.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(intent);
