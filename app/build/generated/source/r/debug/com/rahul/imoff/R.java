@@ -1708,7 +1708,7 @@ containing a value of this type.
         public static final int ifRoom=0x7f090018;
         public static final int image=0x7f090027;
         public static final int imageView2=0x7f090043;
-        public static final int imgPhoto=0x7f09004b;
+        public static final int imgPhoto=0x7f09004a;
         public static final int listMode=0x7f090009;
         public static final int list_item=0x7f090029;
         public static final int loginButton=0x7f090048;
@@ -1718,7 +1718,7 @@ containing a value of this type.
         public static final int never=0x7f090019;
         public static final int none=0x7f09000e;
         public static final int normal=0x7f09000a;
-        public static final int pager=0x7f09004a;
+        public static final int pager=0x7f09004b;
         public static final int passwordField=0x7f090047;
         public static final int progress_circular=0x7f090005;
         public static final int progress_horizontal=0x7f090006;

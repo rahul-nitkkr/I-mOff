@@ -93,7 +93,7 @@ public class ProfileAddManagerFragment extends Fragment {
 
         query.whereEqualTo(ParseConstants.KEY_ISMANAGER,Boolean.TRUE);
 
-        query.whereNotEqualTo(ParseConstants.KEY_USERNAME,mCurrentUser.getUsername());
+       // query.whereNotEqualTo(ParseConstants.KEY_USERNAME,mCurrentUser.getUsername());
         query.addAscendingOrder(ParseConstants.KEY_USERNAME);
         query.findInBackground(new FindCallback<ParseUser>() {
             @Override

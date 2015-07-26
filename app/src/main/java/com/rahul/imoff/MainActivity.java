@@ -4,17 +4,33 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+
+import com.parse.ParseInstallation;
+import com.parse.ParsePush;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 
 public class MainActivity extends ActionBarActivity {
 
+    ImageView mImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mImageView = (ImageView)findViewById(R.id.imgPhoto);
+        mImageView.setOnClickListener(sendNotificationListener);
     }
 
+    View.OnClickListener sendNotificationListener =  new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            sendPushNotification();
+        }
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -37,4 +53,18 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
+    protected void sendPushNotification(){
+        ParseQuery<ParseInstallation> query = ParseInstallation.getQuery();
+        query.whereExists(ParseConstants.KEY_MANAGER);
+        //query.whereContainedIn(ParseConstants.KEY_USERID,getRecipientsId());
+
+        ParsePush push = new ParsePush();
+        push.setQuery(query);
+        push.setMessage(ParseUser.getCurrentUser().get(ParseConstants.KEY_USERNAME) + "is off today!");
+        push.sendInBackground();
+    }
 }
+

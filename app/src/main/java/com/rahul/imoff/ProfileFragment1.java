@@ -48,11 +48,13 @@ public class ProfileFragment1 extends Fragment {
                 if(isChecked){
                    isMgr = Boolean.TRUE;
                    Log.i(TAG,isMgr.toString());
-                    parseuser.put(ParseConstants.KEY_ISMANAGER, isMgr);
+                    //parseuser.put(ParseConstants.KEY_ISMANAGER, isMgr);
+                    //parseuser.saveInBackground();
                 }else{
                     isMgr = Boolean.FALSE;
                     Log.i(TAG,isMgr.toString());
-                    parseuser.put(ParseConstants.KEY_ISMANAGER, isMgr);
+                   // parseuser.put(ParseConstants.KEY_ISMANAGER, isMgr);
+                   // parseuser.saveInBackground();
                 }
 
             }
@@ -82,6 +84,7 @@ public class ProfileFragment1 extends Fragment {
                 FragmentTransaction trans = getFragmentManager()
                         .beginTransaction();
                 parseuser.put(ParseConstants.KEY_TEAM,"VENTURE");
+                parseuser.put(ParseConstants.KEY_ISMANAGER, isMgr);
                 Log.i(TAG,"ParseUser is MANAGER" + parseuser.get(ParseConstants.KEY_ISMANAGER));
                 parseuser.saveInBackground();
 				/*

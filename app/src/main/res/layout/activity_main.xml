@@ -3,5 +3,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:context=".MainActivity" >
-
+    <ImageView
+        android:id="@+id/imgPhoto"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/avatar_empty"
+        android:adjustViewBounds="true"
+        android:visibility="visible"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
 </RelativeLayout>

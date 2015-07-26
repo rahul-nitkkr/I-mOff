@@ -206,6 +206,8 @@ public class ProfilePicture extends ActionBarActivity {
                 public void done(ParseException e) {
 
                     Toast.makeText(getBaseContext(), "Done!", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ProfilePicture.this,MainActivity.class);
+                    startActivity(intent);
                 }
             });
         }

@@ -138,13 +138,13 @@ public class ProfileFragment2 extends Fragment {
                 // add the friend
                 mFriendsRelation.add(mFriends.get(position));
                 checkImageView.setVisibility(View.VISIBLE);
-                mCurrentUser.put(ParseConstants.KEY_TEAM_MEMBERS,mFriends.get(position));
+              //  mCurrentUser.put(ParseConstants.KEY_TEAM_MEMBERS,mFriends.get(position));
             }
             else {
                 // remove the friend
                 mFriendsRelation.remove(mFriends.get(position));
                 checkImageView.setVisibility(View.INVISIBLE);
-                mCurrentUser.remove(ParseConstants.KEY_TEAM_MEMBERS);
+               // mCurrentUser.remove(ParseConstants.KEY_TEAM_MEMBERS);
             }
 
             mCurrentUser.saveInBackground(new SaveCallback() {
