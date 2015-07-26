@@ -50,5 +50,12 @@
         sha1="ddb207af2dcd7cb03ed575ed6a0999c381e9b220">
         <dex dex="/Users/Apple/Desktop/I&apos;mOff/app/build/intermediates/pre-dexed/debug/classes-d0c1c50d52b3b75cd585555ff7793d47a854aa64.jar" />
     </item>
+    <item
+        jar="/Users/Apple/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/Apple/Desktop/I&apos;mOff/app/build/intermediates/pre-dexed/debug/picasso-2.5.2-72999f7e9c3032022180fa63ecb847027deff450.jar" />
+    </item>
 
 </items>

@@ -1,5 +1,7 @@
 package com.rahul.imoff;
 
+import android.app.AlertDialog;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -45,16 +47,33 @@ public class MainActivity extends ActionBarActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        int itemId = item.getItemId();
+        switch (itemId) {
+            case R.id.action_logout:
+                ParseUser.logOut();
+                navigateToLogin();
+                break;
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+            case R.id.action_profile:
+                Intent intent = new Intent(this, UserProfileActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.action_team:
+                Intent intent2 = new Intent(this, TeamStatusActivity.class);
+                startActivity(intent2);
+                break;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-
+    private void navigateToLogin() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
 
     protected void sendPushNotification(){
         ParseQuery<ParseInstallation> query = ParseInstallation.getQuery();

@@ -312,8 +312,8 @@
     <string name="login_error_message">Please make sure you enter a username and password!</string>
     <string name="login_error_title">Oops!</string>
     <string name="manager_check">Are you a Manager?</string>
-    <string name="menu_edit_friends_label">Edit Friends</string>
     <string name="menu_logout_label">Logout</string>
+    <string name="menu_view_profile">Profile</string>
     <string name="offButton">I\'M OFF</string>
     <string name="password_hint">Password</string>
     <string name="second_fragment">second fragment</string>
@@ -328,6 +328,8 @@
     <string name="title_activity_profile_photo">ProfilePhotoActivity</string>
     <string name="title_activity_recepients">Recipients</string>
     <string name="title_activity_sign_up">Sign Up</string>
+    <string name="title_activity_team_status">TeamStatusActivity</string>
+    <string name="title_activity_user_profile">UserProfileActivity</string>
     <string name="title_activity_view_image">ViewImage</string>
     <string name="title_section1">Inbox</string>
     <string name="title_section2">Friends</string>

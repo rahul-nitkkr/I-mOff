@@ -1,9 +1,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto"
-      xmlns:tools="http://schemas.android.com/tools"
-      tools:context=".MainActivity">
-    <item android:id="@+id/action_settings"
-          android:title="@string/action_settings"
-          android:orderInCategory="100"
-          app:showAsAction="never"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_profile"
+        android:title="@string/menu_view_profile"></item>
+    <item
+        android:id="@+id/action_team"
+        android:icon="@drawable/ic_people_white_36dp"
+        app:showAsAction="always"
+        android:title="Camera"></item>
+    <item
+        android:id="@+id/action_logout"
+        android:title="@string/menu_logout_label"></item>
 </menu>

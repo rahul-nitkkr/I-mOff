@@ -25,7 +25,7 @@
         <string name="menu_logout_label">Logout</string>
         <string name="empty_inbox_label">No new messages!</string>
         <string name="empty_friends_label">Add friends to begin!</string>
-        <string name="menu_edit_friends_label">Edit Friends</string>
+        <string name="menu_view_profile">Profile</string>
         <string name="title_activity_edit_friends">Edit Friends</string>
         <string name="error_title">We\'re sorry!</string>
         <string name="title_activity_recepients">Recipients</string>
@@ -37,6 +37,8 @@
     <string name="manager_check">Are you a Manager?</string>
     <string name="title_activity_profile_photo">ProfilePhotoActivity</string>
     <string name="error_external_storage">Externa Storage not available</string>
+    <string name="title_activity_user_profile">UserProfileActivity</string>
+    <string name="title_activity_team_status">TeamStatusActivity</string>
 
 
 </resources>

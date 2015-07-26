@@ -87,10 +87,19 @@
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
-<!--                   IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
+                <!-- IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
                 <category android:name="com.rahul.imoff" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name="com.rahul.imoff.UserProfileActivity"
+            android:label="@string/title_activity_user_profile" >
+        </activity>
+        <activity
+            android:name="com.rahul.imoff.TeamStatusActivity"
+            android:label="@string/title_activity_team_status" >
+        </activity>
     </application>
 
 </manifest>

@@ -30,164 +30,176 @@ ADDED from AndroidManifest.xml:8:5
 	android:name
 		ADDED from AndroidManifest.xml:8:22
 uses-feature#android.hardware.camera
-ADDED from AndroidManifest.xml:9:5
-	android:name
-		ADDED from AndroidManifest.xml:9:19
-uses-feature#android.hardware.camera.autofocus
 ADDED from AndroidManifest.xml:10:5
 	android:name
 		ADDED from AndroidManifest.xml:10:19
-uses-permission#android.permission.READ_PHONE_STATE
+uses-feature#android.hardware.camera.autofocus
 ADDED from AndroidManifest.xml:11:5
 	android:name
-		ADDED from AndroidManifest.xml:11:22
-uses-permission#android.permission.WAKE_LOCK
-ADDED from AndroidManifest.xml:12:5
-	android:name
-		ADDED from AndroidManifest.xml:12:22
-uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+		ADDED from AndroidManifest.xml:11:19
+uses-permission#android.permission.READ_PHONE_STATE
 ADDED from AndroidManifest.xml:13:5
 	android:name
 		ADDED from AndroidManifest.xml:13:22
-uses-permission#android.permission.VIBRATE
+uses-permission#android.permission.WAKE_LOCK
 ADDED from AndroidManifest.xml:14:5
 	android:name
 		ADDED from AndroidManifest.xml:14:22
-uses-permission#android.permission.GET_ACCOUNTS
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
 ADDED from AndroidManifest.xml:15:5
 	android:name
 		ADDED from AndroidManifest.xml:15:22
-uses-permission#com.google.android.c2dm.permission.RECEIVE
+uses-permission#android.permission.VIBRATE
 ADDED from AndroidManifest.xml:16:5
 	android:name
 		ADDED from AndroidManifest.xml:16:22
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from AndroidManifest.xml:17:5
+	android:name
+		ADDED from AndroidManifest.xml:17:22
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from AndroidManifest.xml:18:5
+	android:name
+		ADDED from AndroidManifest.xml:18:22
 permission#com.rahul.imoff.permission.C2D_MESSAGE
-ADDED from AndroidManifest.xml:19:5
+ADDED from AndroidManifest.xml:20:5
 	android:protectionLevel
-		ADDED from AndroidManifest.xml:19:17
+		ADDED from AndroidManifest.xml:22:9
 	android:name
-		ADDED from AndroidManifest.xml:20:17
+		ADDED from AndroidManifest.xml:21:9
 uses-permission#com.rahul.imoff.permission.C2D_MESSAGE
-ADDED from AndroidManifest.xml:21:5
-	android:name
-		ADDED from AndroidManifest.xml:21:22
-application
 ADDED from AndroidManifest.xml:24:5
+	android:name
+		ADDED from AndroidManifest.xml:24:22
+application
+ADDED from AndroidManifest.xml:26:5
 MERGED from com.android.support:appcompat-v7:22.0.0:22:5
 MERGED from com.android.support:support-v4:22.0.0:22:5
 MERGED from com.android.support:support-v4:22.0.0:22:5
 	android:label
-		ADDED from AndroidManifest.xml:28:9
+		ADDED from AndroidManifest.xml:30:9
 	android:allowBackup
-		ADDED from AndroidManifest.xml:26:9
+		ADDED from AndroidManifest.xml:28:9
 	android:icon
-		ADDED from AndroidManifest.xml:27:9
-	android:theme
 		ADDED from AndroidManifest.xml:29:9
+	android:theme
+		ADDED from AndroidManifest.xml:31:9
 	android:name
-		ADDED from AndroidManifest.xml:25:9
+		ADDED from AndroidManifest.xml:27:9
 activity#com.rahul.imoff.LoginActivity
-ADDED from AndroidManifest.xml:30:9
+ADDED from AndroidManifest.xml:32:9
 	android:label
-		ADDED from AndroidManifest.xml:32:13
+		ADDED from AndroidManifest.xml:34:13
 	android:name
-		ADDED from AndroidManifest.xml:31:13
+		ADDED from AndroidManifest.xml:33:13
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:33:13
+ADDED from AndroidManifest.xml:35:13
 action#android.intent.action.MAIN
-ADDED from AndroidManifest.xml:34:17
-	android:name
-		ADDED from AndroidManifest.xml:34:25
-category#android.intent.category.LAUNCHER
 ADDED from AndroidManifest.xml:36:17
 	android:name
-		ADDED from AndroidManifest.xml:36:27
+		ADDED from AndroidManifest.xml:36:25
+category#android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:38:17
+	android:name
+		ADDED from AndroidManifest.xml:38:27
 activity#com.rahul.imoff.SignUpActivity
-ADDED from AndroidManifest.xml:39:9
+ADDED from AndroidManifest.xml:41:9
 	android:screenOrientation
+		ADDED from AndroidManifest.xml:44:13
+	android:label
+		ADDED from AndroidManifest.xml:43:13
+	android:name
 		ADDED from AndroidManifest.xml:42:13
-	android:label
-		ADDED from AndroidManifest.xml:41:13
-	android:name
-		ADDED from AndroidManifest.xml:40:13
 activity#com.rahul.imoff.MainActivity
-ADDED from AndroidManifest.xml:44:9
+ADDED from AndroidManifest.xml:46:9
 	android:screenOrientation
+		ADDED from AndroidManifest.xml:49:13
+	android:label
+		ADDED from AndroidManifest.xml:48:13
+	android:name
 		ADDED from AndroidManifest.xml:47:13
-	android:label
-		ADDED from AndroidManifest.xml:46:13
-	android:name
-		ADDED from AndroidManifest.xml:45:13
 activity#com.rahul.imoff.MockProfileActivity
-ADDED from AndroidManifest.xml:49:9
+ADDED from AndroidManifest.xml:51:9
 	android:label
-		ADDED from AndroidManifest.xml:51:13
+		ADDED from AndroidManifest.xml:53:13
 	android:name
-		ADDED from AndroidManifest.xml:50:13
+		ADDED from AndroidManifest.xml:52:13
 activity#com.rahul.imoff.ProfilePicture
-ADDED from AndroidManifest.xml:53:9
+ADDED from AndroidManifest.xml:55:9
 	android:label
-		ADDED from AndroidManifest.xml:55:13
+		ADDED from AndroidManifest.xml:57:13
 	android:name
-		ADDED from AndroidManifest.xml:54:13
+		ADDED from AndroidManifest.xml:56:13
 service#com.parse.PushService
-ADDED from AndroidManifest.xml:59:9
-	android:name
-		ADDED from AndroidManifest.xml:59:18
-receiver#com.parse.ParseBroadcastReceiver
 ADDED from AndroidManifest.xml:60:9
 	android:name
-		ADDED from AndroidManifest.xml:60:19
+		ADDED from AndroidManifest.xml:60:18
+receiver#com.parse.ParseBroadcastReceiver
+ADDED from AndroidManifest.xml:62:9
+	android:name
+		ADDED from AndroidManifest.xml:62:19
 intent-filter#android.intent.action.BOOT_COMPLETED+android.intent.action.USER_PRESENT
-ADDED from AndroidManifest.xml:61:13
+ADDED from AndroidManifest.xml:63:13
 action#android.intent.action.BOOT_COMPLETED
-ADDED from AndroidManifest.xml:62:17
+ADDED from AndroidManifest.xml:64:17
 	android:name
-		ADDED from AndroidManifest.xml:62:25
+		ADDED from AndroidManifest.xml:64:25
 action#android.intent.action.USER_PRESENT
-ADDED from AndroidManifest.xml:63:17
+ADDED from AndroidManifest.xml:65:17
 	android:name
-		ADDED from AndroidManifest.xml:63:25
+		ADDED from AndroidManifest.xml:65:25
 receiver#com.parse.ParsePushBroadcastReceiver
-ADDED from AndroidManifest.xml:66:9
+ADDED from AndroidManifest.xml:68:9
 	android:exported
-		ADDED from AndroidManifest.xml:67:19
+		ADDED from AndroidManifest.xml:70:13
 	android:name
-		ADDED from AndroidManifest.xml:66:19
+		ADDED from AndroidManifest.xml:69:13
 intent-filter#com.parse.push.intent.DELETE+com.parse.push.intent.OPEN+com.parse.push.intent.RECEIVE
-ADDED from AndroidManifest.xml:68:13
+ADDED from AndroidManifest.xml:71:13
 action#com.parse.push.intent.RECEIVE
-ADDED from AndroidManifest.xml:69:17
+ADDED from AndroidManifest.xml:72:17
 	android:name
-		ADDED from AndroidManifest.xml:69:25
+		ADDED from AndroidManifest.xml:72:25
 action#com.parse.push.intent.DELETE
-ADDED from AndroidManifest.xml:70:17
+ADDED from AndroidManifest.xml:73:17
 	android:name
-		ADDED from AndroidManifest.xml:70:25
+		ADDED from AndroidManifest.xml:73:25
 action#com.parse.push.intent.OPEN
-ADDED from AndroidManifest.xml:71:17
+ADDED from AndroidManifest.xml:74:17
 	android:name
-		ADDED from AndroidManifest.xml:71:25
+		ADDED from AndroidManifest.xml:74:25
 receiver#com.parse.GcmBroadcastReceiver
-ADDED from AndroidManifest.xml:74:9
+ADDED from AndroidManifest.xml:77:9
 	android:permission
-		ADDED from AndroidManifest.xml:75:19
+		ADDED from AndroidManifest.xml:79:13
 	android:name
-		ADDED from AndroidManifest.xml:74:19
+		ADDED from AndroidManifest.xml:78:13
 intent-filter#com.google.android.c2dm.intent.RECEIVE+com.google.android.c2dm.intent.REGISTRATION+com.rahul.imoff
-ADDED from AndroidManifest.xml:76:13
+ADDED from AndroidManifest.xml:80:13
 action#com.google.android.c2dm.intent.RECEIVE
-ADDED from AndroidManifest.xml:77:17
+ADDED from AndroidManifest.xml:81:17
 	android:name
-		ADDED from AndroidManifest.xml:77:25
+		ADDED from AndroidManifest.xml:81:25
 action#com.google.android.c2dm.intent.REGISTRATION
-ADDED from AndroidManifest.xml:78:17
+ADDED from AndroidManifest.xml:82:17
 	android:name
-		ADDED from AndroidManifest.xml:78:25
+		ADDED from AndroidManifest.xml:82:25
 category#com.rahul.imoff
-ADDED from AndroidManifest.xml:83:17
+ADDED from AndroidManifest.xml:85:17
 	android:name
-		ADDED from AndroidManifest.xml:83:27
+		ADDED from AndroidManifest.xml:85:27
+activity#com.rahul.imoff.UserProfileActivity
+ADDED from AndroidManifest.xml:89:9
+	android:label
+		ADDED from AndroidManifest.xml:91:13
+	android:name
+		ADDED from AndroidManifest.xml:90:13
+activity#com.rahul.imoff.TeamStatusActivity
+ADDED from AndroidManifest.xml:93:9
+	android:label
+		ADDED from AndroidManifest.xml:95:13
+	android:name
+		ADDED from AndroidManifest.xml:94:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:appcompat-v7:22.0.0:20:5
