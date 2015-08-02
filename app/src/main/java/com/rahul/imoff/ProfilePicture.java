@@ -196,7 +196,7 @@ public class ProfilePicture extends ActionBarActivity {
 
             ParseFile file = new ParseFile("picturePath", image);
 
-            file.saveInBackground();
+            //file.saveInBackground();
 
             currentUser.put(ParseConstants.KEY_PROFILE_PHOTO,file);
 

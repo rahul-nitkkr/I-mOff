@@ -1,6 +1,5 @@
 package com.rahul.imoff;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -29,9 +28,9 @@ import com.parse.SaveCallback;
 import java.util.List;
 
 
-public class ProfileAddManagerFragment extends Fragment {
+public class ProfileFragmentAddManager extends Fragment {
 
-    public static final String TAG = ProfileAddManagerFragment.class.getSimpleName();
+    public static final String TAG = ProfileFragmentAddManager.class.getSimpleName();
 
     protected ParseRelation<ParseUser> mManager;
     protected ParseUser mCurrentUser;
@@ -61,18 +60,14 @@ public class ProfileAddManagerFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-//                FragmentTransaction trans = getFragmentManager()
-//                        .beginTransaction();
-//                //trans.replace(R.id.root_frame, new StaticFragment());
-//                trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-//                trans.addToBackStack(null);
-//                trans.commit();
+                FragmentTransaction trans = getFragmentManager()
+                        .beginTransaction();
 
-                Intent intent = new Intent(getActivity(),ProfilePicture.class);
-//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
+                trans.replace(R.id.root_frame, new ProfileFragmentAddSeat());
+                trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                trans.addToBackStack(null);
 
+                trans.commit();
             }
         });
 
@@ -146,6 +141,7 @@ public class ProfileAddManagerFragment extends Fragment {
                 checkImageView.setVisibility(View.INVISIBLE);
             }
 
+            mCurrentUser.put(ParseConstants.KEY_OFFSTATUS,Boolean.FALSE);
             mCurrentUser.saveInBackground(new SaveCallback() {
                 @Override
                 public void done(ParseException e) {

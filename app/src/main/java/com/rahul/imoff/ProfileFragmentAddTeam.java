@@ -28,9 +28,9 @@ import com.parse.SaveCallback;
 import java.util.List;
 
 
-public class ProfileFragment2 extends Fragment {
+public class ProfileFragmentAddTeam extends Fragment {
 
-    public static final String TAG = ProfileFragment2.class.getSimpleName();
+    public static final String TAG = ProfileFragmentAddTeam.class.getSimpleName();
 
     protected ParseRelation<ParseUser> mFriendsRelation;
     protected ParseUser mCurrentUser;
@@ -62,7 +62,7 @@ public class ProfileFragment2 extends Fragment {
             public void onClick(View v) {
                 FragmentTransaction trans = getFragmentManager()
                         .beginTransaction();
-                trans.replace(R.id.root_frame, new ProfileAddManagerFragment());
+                trans.replace(R.id.root_frame, new ProfileFragmentAddManager());
                 trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 trans.addToBackStack(null);
                 trans.commit();

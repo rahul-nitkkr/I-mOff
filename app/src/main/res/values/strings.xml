@@ -33,12 +33,26 @@
         <string name="title_activity_view_image">ViewImage</string>
         <string name="subtitle">Create.Send.Forget</string>
         <string name="APP_ID">1475898282702418</string>
-    <string name="title_activity_mock_profile">MockProfileActivity</string>
+    <string name="title_activity_mock_profile">Create Profile</string>
     <string name="manager_check">Are you a Manager?</string>
-    <string name="title_activity_profile_photo">ProfilePhotoActivity</string>
-    <string name="error_external_storage">Externa Storage not available</string>
+    <string name="title_activity_profile_photo">Profile Picture</string>
+    <string name="error_external_storage">External Storage not available</string>
     <string name="title_activity_user_profile">UserProfileActivity</string>
     <string name="title_activity_team_status">TeamStatusActivity</string>
+    <string name="title_activity_floor_status">FloorStatusActivity</string>
+    <string-array name="floor_numbers">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+    </string-array>
 
 
 </resources>

@@ -26,6 +26,9 @@ public class TeamStatusActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_status);
+
+        //getActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
 

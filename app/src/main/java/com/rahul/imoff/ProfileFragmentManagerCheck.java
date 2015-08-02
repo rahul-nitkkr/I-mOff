@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.parse.ParseUser;
 
 
-public class ProfileFragment1 extends Fragment {
+public class ProfileFragmentManagerCheck extends Fragment {
 
     private static final String TAG = "FirstFragment";
     Boolean isMgr  = Boolean.FALSE;
@@ -92,9 +92,9 @@ public class ProfileFragment1 extends Fragment {
 				 * "root_fragment.xml" as the reference to replace fragment
 				 */
               if(isMgr){
-                trans.replace(R.id.root_frame, new ProfileFragment2());}
+                trans.replace(R.id.root_frame, new ProfileFragmentAddTeam());}
                 else{
-                    trans.replace(R.id.root_frame, new ProfileAddManagerFragment());
+                    trans.replace(R.id.root_frame, new ProfileFragmentAddManager());
                 }
 
 				/*

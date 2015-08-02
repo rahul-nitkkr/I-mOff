@@ -1,6 +1,6 @@
 package com.rahul.imoff;
 
-import android.app.AlertDialog;
+
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -15,7 +15,7 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity{
 
     ImageView mImageView;
 
@@ -30,6 +30,9 @@ public class MainActivity extends ActionBarActivity {
     View.OnClickListener sendNotificationListener =  new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            ParseUser current  = ParseUser.getCurrentUser();
+            current.put(ParseConstants.KEY_OFFSTATUS,Boolean.TRUE);
+            current.saveInBackground();
             sendPushNotification();
         }
     };
@@ -62,6 +65,11 @@ public class MainActivity extends ActionBarActivity {
             case R.id.action_team:
                 Intent intent2 = new Intent(this, TeamStatusActivity.class);
                 startActivity(intent2);
+                break;
+
+            case R.id.action_floor:
+                Intent intent3= new Intent(this, FloorStatusActivity.class);
+                startActivity(intent3);
                 break;
         }
 

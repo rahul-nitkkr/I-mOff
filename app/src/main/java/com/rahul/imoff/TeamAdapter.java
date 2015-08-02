@@ -117,7 +117,7 @@ public class TeamAdapter extends ArrayAdapter<ParseUser> {
 //        byte[] bytes = (byte[])(member.get(ParseConstants.KEY_PROFILE_PHOTO));
 //
 //        Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0,bytes.length);
-//        holder.profileImageView.setImageBitmap((Bitmap) member.get(ParseConstants.KEY_PROFILE_PHOTO));
+//        holder.profileImageView.setImageBitmap((Bitmap) member.get(ParseConstants.KEY_PROFILE_PHOTO));`
 
         return convertView;
     }

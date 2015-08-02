@@ -27,7 +27,7 @@ public class RootFragment extends Fragment {
 		 * When this container fragment is created, we fill it with our first
 		 * "real" fragment
 		 */
-        transaction.replace(R.id.root_frame, new ProfileFragment1());
+        transaction.replace(R.id.root_frame, new ProfileFragmentManagerCheck());
 
         transaction.commit();
 
