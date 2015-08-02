@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- From: file:/Users/Apple/Desktop/I'mOff/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string-array name="floor_numbers">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+    </string-array>
     <!-- From: file:/Users/Apple/Desktop/I'mOff/app/build/intermediates/exploded-aar/I'mOff/ViewPagerIndicator/unspecified/res/values/values.xml -->
     <eat-comment/>
     <attr format="boolean" name="centered"/>
@@ -323,6 +338,7 @@
     <string name="signup_error_title">Oops!</string>
     <string name="subtitle">Create.Send.Forget</string>
     <string name="title_activity_edit_friends">Edit Friends</string>
+    <string name="title_activity_floor_status">FloorStatusActivity</string>
     <string name="title_activity_login">Login</string>
     <string name="title_activity_mock_profile">MockProfileActivity</string>
     <string name="title_activity_profile_photo">ProfilePhotoActivity</string>

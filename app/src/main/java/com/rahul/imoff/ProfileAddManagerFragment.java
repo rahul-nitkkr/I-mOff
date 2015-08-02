@@ -146,6 +146,7 @@ public class ProfileAddManagerFragment extends Fragment {
                 checkImageView.setVisibility(View.INVISIBLE);
             }
 
+            mCurrentUser.put(ParseConstants.KEY_OFFSTATUS,Boolean.FALSE);
             mCurrentUser.saveInBackground(new SaveCallback() {
                 @Override
                 public void done(ParseException e) {

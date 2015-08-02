@@ -66,6 +66,11 @@ public class MainActivity extends ActionBarActivity {
                 Intent intent2 = new Intent(this, TeamStatusActivity.class);
                 startActivity(intent2);
                 break;
+
+            case R.id.action_floor:
+                Intent intent3= new Intent(this, FloorStatusActivity.class);
+                startActivity(intent3);
+                break;
         }
 
         return super.onOptionsItemSelected(item);

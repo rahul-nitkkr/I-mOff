@@ -92,7 +92,13 @@
         </activity>
         <activity
             android:name=".TeamStatusActivity"
-            android:label="@string/title_activity_team_status" >
+            android:label="@string/title_activity_team_status"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
+            android:name=".FloorStatusActivity"
+            android:label="@string/title_activity_floor_status"
+            android:parentActivityName=".MainActivity">
         </activity>
     </application>
 

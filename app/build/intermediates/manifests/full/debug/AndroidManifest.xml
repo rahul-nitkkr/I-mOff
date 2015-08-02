@@ -100,6 +100,10 @@
             android:name="com.rahul.imoff.TeamStatusActivity"
             android:label="@string/title_activity_team_status" >
         </activity>
+        <activity
+            android:name="com.rahul.imoff.FloorStatusActivity"
+            android:label="@string/title_activity_floor_status" >
+        </activity>
     </application>
 
 </manifest>
