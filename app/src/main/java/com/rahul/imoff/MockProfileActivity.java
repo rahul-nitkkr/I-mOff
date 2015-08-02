@@ -26,6 +26,7 @@ public class MockProfileActivity extends ActionBarActivity {
         mPager = (ViewPager) findViewById(R.id.pager);
         mPagerAdapter = new SlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
+        getSupportActionBar().hide();
 
     }
 

@@ -51,7 +51,7 @@
         </activity>
         <activity
             android:name="com.rahul.imoff.MainActivity"
-            android:label="MainActivity"
+            android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
@@ -98,11 +98,13 @@
         </activity>
         <activity
             android:name="com.rahul.imoff.TeamStatusActivity"
-            android:label="@string/title_activity_team_status" >
+            android:label="@string/title_activity_team_status"
+            android:parentActivityName="com.rahul.imoff.MainActivity" >
         </activity>
         <activity
             android:name="com.rahul.imoff.FloorStatusActivity"
-            android:label="@string/title_activity_floor_status" >
+            android:label="@string/title_activity_floor_status"
+            android:parentActivityName="com.rahul.imoff.MainActivity" >
         </activity>
     </application>
 

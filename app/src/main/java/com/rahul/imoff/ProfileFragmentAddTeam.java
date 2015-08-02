@@ -1,6 +1,5 @@
 package com.rahul.imoff;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -29,13 +28,13 @@ import com.parse.SaveCallback;
 import java.util.List;
 
 
-public class ProfileAddManagerFragment extends Fragment {
+public class ProfileFragmentAddTeam extends Fragment {
 
-    public static final String TAG = ProfileAddManagerFragment.class.getSimpleName();
+    public static final String TAG = ProfileFragmentAddTeam.class.getSimpleName();
 
-    protected ParseRelation<ParseUser> mManager;
+    protected ParseRelation<ParseUser> mFriendsRelation;
     protected ParseUser mCurrentUser;
-    protected List<ParseUser> mManagers;
+    protected List<ParseUser> mFriends;
     protected GridView mGridView;
     protected List<ParseUser> mUsers;
 
@@ -44,10 +43,10 @@ public class ProfileAddManagerFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater
-                .inflate(R.layout.fragment_profile_team, container, false);
+                .inflate(R.layout.fragment_profile_addteam, container, false);
 
 
-        mGridView = (GridView)view.findViewById(R.id.managerGrid);
+        mGridView = (GridView)view.findViewById(R.id.friendsGrid);
 
         TextView emptyTextView = (TextView)view.findViewById(android.R.id.empty);
         mGridView.setEmptyView(emptyTextView);
@@ -61,18 +60,12 @@ public class ProfileAddManagerFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-//                FragmentTransaction trans = getFragmentManager()
-//                        .beginTransaction();
-//                //trans.replace(R.id.root_frame, new StaticFragment());
-//                trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-//                trans.addToBackStack(null);
-//                trans.commit();
-
-                Intent intent = new Intent(getActivity(),ProfilePicture.class);
-//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-
+                FragmentTransaction trans = getFragmentManager()
+                        .beginTransaction();
+                trans.replace(R.id.root_frame, new ProfileFragmentAddManager());
+                trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                trans.addToBackStack(null);
+                trans.commit();
             }
         });
 
@@ -84,16 +77,22 @@ public class ProfileAddManagerFragment extends Fragment {
         super.onResume();
 
         mCurrentUser = ParseUser.getCurrentUser();
-        mManager = mCurrentUser.getRelation(ParseConstants.KEY_MANAGER);
+        mFriendsRelation = mCurrentUser.getRelation(ParseConstants.KEY_FRIENDS_RELATION);
 
         getActivity().setProgressBarIndeterminateVisibility(true);
 
         ParseQuery<ParseUser> query = ParseUser.getQuery();
         query.whereExists(ParseConstants.KEY_USERNAME);
 
-        query.whereEqualTo(ParseConstants.KEY_ISMANAGER,Boolean.TRUE);
+        /*
+        * Added the TEAM check.
+        * Is this check required or do we display all the users.
+        * when manager manages more than one team.
+        * */
 
-       // query.whereNotEqualTo(ParseConstants.KEY_USERNAME,mCurrentUser.getUsername());
+      //   query.whereEqualTo(ParseConstants.KEY_TEAM,mCurrentUser.get(ParseConstants.KEY_TEAM));
+
+        query.whereNotEqualTo(ParseConstants.KEY_USERNAME,mCurrentUser.getUsername());
         query.addAscendingOrder(ParseConstants.KEY_USERNAME);
         query.findInBackground(new FindCallback<ParseUser>() {
             @Override
@@ -101,20 +100,20 @@ public class ProfileAddManagerFragment extends Fragment {
                 getActivity().setProgressBarIndeterminateVisibility(false);
 
                 if (e == null) {
-                    mManagers = team_members;
+                    mFriends = team_members;
 
-                    String[] usernames = new String[mManagers.size()];
+                    String[] usernames = new String[mFriends.size()];
                     int i = 0;
-                    for(ParseUser user : mManagers) {
+                    for(ParseUser user : mFriends) {
                         usernames[i] = user.getUsername();
                         i++;
                     }
                     if (mGridView.getAdapter() == null) {
-                        UserAdapter adapter = new UserAdapter(getActivity(), mManagers);
+                        UserAdapter adapter = new UserAdapter(getActivity(), mFriends);
                         mGridView.setAdapter(adapter);
                     }
                     else {
-                        ((UserAdapter)mGridView.getAdapter()).refill(mManagers);
+                        ((UserAdapter)mGridView.getAdapter()).refill(mFriends);
                     }
                 }
                 else {
@@ -134,19 +133,20 @@ public class ProfileAddManagerFragment extends Fragment {
         public void onItemClick(AdapterView<?> parent, View view, int position,
                                 long id) {
             ImageView checkImageView = (ImageView)view.findViewById(R.id.checkImageView);
-
+            mCurrentUser = ParseUser.getCurrentUser();
             if (mGridView.isItemChecked(position)) {
                 // add the friend
-                mManager.add(mManagers.get(position));
+                mFriendsRelation.add(mFriends.get(position));
                 checkImageView.setVisibility(View.VISIBLE);
+              //  mCurrentUser.put(ParseConstants.KEY_TEAM_MEMBERS,mFriends.get(position));
             }
             else {
                 // remove the friend
-                mManager.remove(mManagers.get(position));
+                mFriendsRelation.remove(mFriends.get(position));
                 checkImageView.setVisibility(View.INVISIBLE);
+               // mCurrentUser.remove(ParseConstants.KEY_TEAM_MEMBERS);
             }
 
-            mCurrentUser.put(ParseConstants.KEY_OFFSTATUS,Boolean.FALSE);
             mCurrentUser.saveInBackground(new SaveCallback() {
                 @Override
                 public void done(ParseException e) {

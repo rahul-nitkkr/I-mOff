@@ -1,6 +1,6 @@
 package com.rahul.imoff;
 
-import android.app.AlertDialog;
+
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -15,7 +15,7 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity{
 
     ImageView mImageView;
 
